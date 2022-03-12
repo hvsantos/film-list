@@ -1,13 +1,47 @@
 const $select = document.querySelector('.select-input')
 $select.addEventListener('input', verifyCategory)
+const $card = document.querySelector('.film-list')
 
 function verifyCategory() {
   let category = $select.value
   if (category == 'scifi') {
-    console.log('SCIFI!')
+    $card.innerHTML = ''
+    for (
+      let counterScifi = 0;
+      counterScifi < filmsScifi.length;
+      counterScifi++
+    ) {
+      $card.innerHTML += `
+      <div class="card">
+        <p class="main-subtitle -filmtitle">${filmsScifi[counterScifi].name}</p>
+        <img src="${filmsScifi[counterScifi].img}" alt=""/>
+      </div>`
+    }
   } else if (category == 'comedia') {
-    console.log('COMEDIA!')
+    $card.innerHTML = ''
+    for (
+      let counterComedy = 0;
+      counterComedy < filmsComedy.length;
+      counterComedy++
+    ) {
+      $card.innerHTML += `
+      <div class="card">
+        <p class="main-subtitle -filmtitle">${filmsComedy[counterComedy].name}</p>
+        <img src="${filmsComedy[counterComedy].img}" alt=""/>
+      </div>`
+    }
   } else if (category == 'aventura') {
-    console.log('AVENTURA!')
+    $card.innerHTML = ''
+    for (
+      let counterAdventure = 0;
+      counterAdventure < filmsAdventure.length;
+      counterAdventure++
+    ) {
+      $card.innerHTML += `
+      <div class="card">
+        <p class="main-subtitle -filmtitle">${filmsAdventure[counterAdventure].name}</p>
+        <img src="${filmsAdventure[counterAdventure].img}" alt=""/>
+      </div>`
+    }
   }
 }
