@@ -1,4 +1,4 @@
-const $select = document.querySelector('.select-input')
+const $select = document.querySelector('#select-value')
 $select.addEventListener('input', verifyCategory)
 const $card = document.querySelector('.film-list')
 
