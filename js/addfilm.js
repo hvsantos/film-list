@@ -72,4 +72,5 @@ function addFilm(name, category, img) {
       filmsAdventure.push(i)
     }
   }
+  $card.innerHTML = 'Filme Adicionado com Sucesso'
 }
