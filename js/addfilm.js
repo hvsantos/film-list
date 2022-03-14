@@ -38,6 +38,9 @@ function checkInputs(event) {
     ) {
       if ($inputUrl.endsWith('.jpg') || $inputUrl.endsWith('.png')) {
         addFilm($inputName, $inputCategory, $inputUrl)
+        document.querySelector('#input-name').value = ''
+        document.querySelector('#input-category').value = ''
+        document.querySelector('#input-url').value = ''
       } else {
         $card.innerHTML = 'Favor Inserir uma Imagem Válida'
       }
@@ -47,9 +50,6 @@ function checkInputs(event) {
   } else {
     $card.innerHTML = 'Favor Inserir um Nome'
   }
-  document.querySelector('#input-name').value = ''
-  document.querySelector('#input-category').value = ''
-  document.querySelector('#input-url').value = ''
 }
 
 function addFilm(name, category, img) {
@@ -60,17 +60,42 @@ function addFilm(name, category, img) {
     }
   ]
   if (category == 'Sci-Fi') {
+    let check = checkIfWeHaveIt(name, img, filmsScifi)
+    if (check == 1) {
+      return
+    }
     for (let i of array) {
       filmsScifi.push(i)
     }
   } else if (category == 'Comédia') {
+    let check = checkIfWeHaveIt(name, img, filmsComedy)
+    if (check == 1) {
+      return
+    }
     for (let i of array) {
       filmsComedy.push(i)
     }
   } else if (category == 'Aventura') {
+    let check = checkIfWeHaveIt(name, img, filmsAdventure)
+    if (check == 1) {
+      return
+    }
     for (let i of array) {
       filmsAdventure.push(i)
     }
   }
   $card.innerHTML = 'Filme Adicionado com Sucesso'
+}
+
+function checkIfWeHaveIt(name, img, category) {
+  for (let i = 0; i < category.length; i++) {
+    if (category[i].name == name) {
+      $card.innerHTML = 'Você tentou inserir um Nome já existente'
+      return 1
+    } else if (category[1].img == img) {
+      $card.innerHTML = 'Você tentou inserir uma Imagem já existente'
+      return 1
+    }
+  }
+  return 0
 }
