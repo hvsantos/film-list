@@ -1,0 +1,12 @@
+.main-subtitle {
+  font-family: 'Fredoka', Arial, Helvetica, sans-serif;
+  color: #071330;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.main-subtitle.-filmtitle {
+  margin-bottom: 10px;
+}
+.main-subtitle.-small {
+  font-size: 1.2rem;
+}
