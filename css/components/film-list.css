@@ -1,0 +1,20 @@
+.film-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 40px;
+  max-width: 1200px;
+  margin-top: 1rem;
+}
+.film-list img {
+  width: 200px;
+  height: 250px;
+}
+
+.film-list .card {
+  text-align: center;
+  padding: 2px;
+  background-color: #f3eac0;
+}
